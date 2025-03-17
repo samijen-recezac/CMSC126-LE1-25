@@ -1,0 +1,234 @@
+body {
+    font-family: 'Sarpanch', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/*         TITLE BAR         */
+.title-bar {
+    background-color: #dcedff;
+    font-size: 10px;
+    padding: 1px 10px;
+    align-items: baseline;
+}
+
+/*         TOOLBAR           */
+.toolbar-container {
+    background-color: #ddd;
+    border: 1px solid #000000;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 8px 10px;
+    display: flex;
+    align-items: center; /* Aligns everything properly */
+    justify-content: space-between; /* Keeps left & right sides apart */
+    position: relative;
+}
+
+/* Toolbar Left: (Tabs like "What's Hot", "New", etc.) */
+.toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 50px;
+}
+
+/* Toolbar Right: (Search bar + icons) */
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/*       SEARCH BAR ON TOOLBAR          */
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 200px;
+}
+
+.search-bar {
+    padding: 6px 10px;
+    border: none;
+    outline: none;
+    flex: 1;
+}
+
+.search-button {
+    background-color: #ddd;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #ccc;
+}
+
+/*       TOOLBAR TABS      */
+.toolbar-tabs {
+    display: flex;
+    gap: 10px;
+    padding-left: 210px;
+    margin-top: 10px;
+}
+
+/* Default tab styling */
+.toolbar-tabs a {
+    text-decoration: none;
+    color: #3267ba;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #000000;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0; 
+    font-weight: bold;
+    transition: background-color 0.2s, border-color 0.2s;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect */
+.toolbar-tabs a:hover {
+    background-color: #e0e0e0;
+}
+
+.toolbar-tabs a.active {
+    color: #ff5700;
+    background-color: white; 
+    border-bottom: none;
+    font-weight: bold;
+}
+
+/*         SIDEBAR           */
+.sidebar {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 180px;
+    height: calc(100vh - 60px);
+    background: #eff8ff;
+    padding: 10px;
+    border-right: 2px solid #ccc;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #000000;
+    overflow-y: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Sidebar List */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-links li {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 8px 10px;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s, border 0.2s;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+
+.sidebar-links li:hover {
+    color: #ff5700;
+    border: 2px solid #313131;
+}
+
+.sidebar-links li.selected {
+    color: #ff5700;
+    border: 2px solid #ff5700;
+    background-color: rgba(255, 87, 0, 0.1);
+    border-radius: 4px;
+}
+.sidebar img {
+    width: 100%;
+    height: auto; 
+    display: block; 
+}
+
+/*             MAIN CONTENT         */
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-left: 220px;
+    padding: 15px;
+    height: calc(100vh - 90px);
+}
+
+/*          FEED             */
+.feed {
+    background: white;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    height: 100%;
+}
+
+/*           POST CONTENTS            */
+.contents {
+    background: white;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    height: 100%;
+}
+
+/*       TOOLBAR ICONS       */
+.toolbar-icons span {
+    display: inline-block;
+    padding: 6px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.toolbar-icons span:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
+
+.toolbar-icons span:active {
+    background-color: #bbb;
+    transform: scale(0.98);
+}
+
+/*      RESPONSIVE DESIGN    */
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .sidebar {
+        position: fixed;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        box-shadow: none;
+    }
+
+    .toolbar-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .toolbar-tabs {
+        margin-left: 0;
+    }
+}
