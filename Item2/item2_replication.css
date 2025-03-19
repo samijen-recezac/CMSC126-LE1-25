@@ -1,44 +1,83 @@
+@font-face {
+    font-family: 'PixelArial';
+    src: url('assets/pixel-arial.ttf') format('truetype');
+}
+
+.container {
+    margin-top: 90px; /* Adjust based on the combined height of the title bar and toolbar */
+    height: calc(100vh - 90px);
+    display: flex;
+    flex-direction: row;
+    margin-left: 200px;
+    height: calc(100vh - 90px);
+}
+
 body {
-    font-family: 'Sarpanch', sans-serif;
+    font-family: 'PixelArial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
+    padding-top: 90px;
 }
 
 /*         TITLE BAR         */
+/* Header container */
+header {
+    position: fixed; /* Keeps it at the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it's above other content */
+    display: flex;
+    flex-direction: column; /* Keeps title bar and toolbar separate */
+}
+
+/* Title Bar */
 .title-bar {
     background-color: #dcedff;
     font-size: 10px;
-    padding: 1px 10px;
-    align-items: baseline;
+    padding: 5px;
+    padding-left: 8px;
+    padding-top: 10px;
+    display: flex;
+    align-items: end;
+    gap: 5px;
 }
 
-/*         TOOLBAR           */
+.title-icon {
+    width: auto;
+    height: 60px;
+}
+
+.title-text {
+    font-size: 30px;
+    margin: 0;
+}
+
+/* Toolbar */
 .toolbar-container {
     background-color: #ddd;
     border: 1px solid #000000;
     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
-    padding: 8px 10px;
-    display: flex;
-    align-items: center; /* Aligns everything properly */
-    justify-content: space-between; /* Keeps left & right sides apart */
-    position: relative;
-}
-
-/* Toolbar Left: (Tabs like "What's Hot", "New", etc.) */
-.toolbar-left {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.toolbar-tabs {
+    display: flex;
     gap: 10px;
-    padding-left: 50px;
+    padding-left: 210px;
+    margin-top: 5px;
 }
 
-/* Toolbar Right: (Search bar + icons) */
-.toolbar-right {
+.toolbar-icons {
     display: flex;
-    align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
+
+
+
 
 /*       SEARCH BAR ON TOOLBAR          */
 .search-container {
@@ -70,60 +109,23 @@ body {
     background-color: #ccc;
 }
 
-/*       TOOLBAR TABS      */
-.toolbar-tabs {
-    display: flex;
-    gap: 10px;
-    padding-left: 210px;
-    margin-top: 10px;
-}
-
-/* Default tab styling */
-.toolbar-tabs a {
-    text-decoration: none;
-    color: #3267ba;
-    padding: 5px 10px;
-    background-color: #f0f0f0;
-    border: 1px solid #000000;
-    border-bottom: none;
-    border-radius: 8px 8px 0 0; 
-    font-weight: bold;
-    transition: background-color 0.2s, border-color 0.2s;
-    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Hover effect */
-.toolbar-tabs a:hover {
-    background-color: #e0e0e0;
-}
-
-.toolbar-tabs a.active {
-    color: #ff5700;
-    background-color: white; 
-    border-bottom: none;
-    font-weight: bold;
-}
-
 /*         SIDEBAR           */
 .sidebar {
-    position: fixed;
+    position: absolute;
     top: 90px;
     left: 0;
-    width: 180px;
-    height: calc(100vh - 60px);
+    min-Width: 200px;
+    width: 200px;
+    height: calc(100vh - 90px);
     background: #eff8ff;
-    padding: 10px;
-    border-right: 2px solid #ccc;
-    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #000000;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .sidebar::-webkit-scrollbar {
     display: none;
 }
 
-/* Sidebar List */
 .sidebar-links {
     list-style: none;
     padding: 0;
@@ -133,45 +135,37 @@ body {
 .sidebar-links li {
     font-weight: bold;
     text-transform: uppercase;
-    padding: 8px 10px;
+    padding: 8px;
     cursor: pointer;
-    transition: color 0.2s, background-color 0.2s, border 0.2s;
     width: 100%;
     display: block;
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
 
 .sidebar-links li:hover {
     color: #ff5700;
-    border: 2px solid #313131;
+    border-top: 1px solid #313131;
+    border-bottom: 1px solid #313131;
+    border-left: none;
+    border-right: none;
 }
 
-.sidebar-links li.selected {
-    color: #ff5700;
-    border: 2px solid #ff5700;
-    background-color: rgba(255, 87, 0, 0.1);
-    border-radius: 4px;
-}
 .sidebar img {
     width: 100%;
-    height: auto; 
-    display: block; 
+    height: auto;
+    display: block;
 }
 
-/*             MAIN CONTENT         */
-.container {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    margin-left: 220px;
-    padding: 15px;
-    height: calc(100vh - 90px);
+.sidebar-links img {
+    width: auto;
+    height: 30px;
+    display: inline-block;
+    vertical-align:middle; 
 }
 
 /*          FEED             */
 .feed {
     background: white;
-    padding: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex: 1;
     height: 100%;
@@ -180,13 +174,12 @@ body {
 /*           POST CONTENTS            */
 .contents {
     background: white;
-    padding: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex: 1;
     height: 100%;
 }
 
-/*       TOOLBAR ICONS       */
+/*       TOOLBAR       */
 .toolbar-icons span {
     display: inline-block;
     padding: 6px 10px;
@@ -208,7 +201,49 @@ body {
     transform: scale(0.98);
 }
 
-/*      RESPONSIVE DESIGN    */
+.toolbar-icons img {
+    width: 16px; 
+    height: 16px;
+    vertical-align: middle; 
+    margin-right: 5px; 
+}
+
+.toolbar-tabs {
+    display: flex;
+    gap: 10px;
+    padding-left: 210px;
+    margin-top: 10px;
+}
+
+.toolbar-tabs a,
+.toolbar-tabs label {
+    text-decoration: none;
+    color: #3267ba;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #000000;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0; 
+    font-weight: bold;
+    transition: background-color 0.2s, border-color 0.2s;
+    cursor: pointer;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar-tabs a:hover,
+.toolbar-tabs label:hover {
+    background-color: #e0e0e0;
+}
+
+.toolbar-tabs input[type="radio"] {
+    display: none;
+}
+
+.toolbar-tabs input[type="radio"]:checked + label {
+    color: #ff5700;
+    background-color: white;
+}
+
 @media (max-width: 800px) {
     .container {
         flex-direction: column;

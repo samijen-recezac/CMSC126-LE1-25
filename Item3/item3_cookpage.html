@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookerista Kodigo</title>
+    <link rel="stylesheet" href="item3_cookpage.css">
+</head>
+<body>
+
+    <header class="top-section">
+        <div class="top-content">
+            <div class="top-left">
+                <button class="top-button login-button" tabindex="0">
+                    <img src="assets/user.png" alt="User">
+                    Log In
+                </button>
+                <button class="top-button newsletter-button" tabindex="0">Newsletters</button>
+            </div>
+
+            <div class="top-middle">
+                <input type="text" class="search-input" placeholder="Search recipes..." tabindex="0">
+                <button class="search-button" tabindex="0">
+                    Search
+                    <img src="assets/search.png" alt="Search">
+                </button>
+            </div>
+
+            <div class="top-right">
+                <h1 class="site-logo">Cookerista Kodigo</h1>
+            </div>
+        </div>
+
+        <nav class="nav-buttons">
+            <button class="nav-button" tabindex="0">Dinners</button>
+            <button class="nav-button" tabindex="0">Meals</button>
+            <button class="nav-button" tabindex="0">Ingredients</button>
+            <button class="nav-button" tabindex="0">Occasions</button>
+            <button class="nav-button" tabindex="0">Cuisines</button>
+            <button class="nav-button" tabindex="0">Kitchen Tips</button>
+            <button class="nav-button" tabindex="0">About Us</button>
+        </nav>
+    </header>
+
+    <main class="recipe-container">
+        <div id="ingredients-view" class="recipe-card" tabindex="0">
+            <h1 class="recipe-title">Dijon Pork Chops with Apple Salad</h1>
+            <p class="recipe-description">
+                Grilling is an easy way to add a smoky, savory flavor to pork chops. This easy Dijon 
+                pork chop recipe will show you the best technique to make juicy, beautifully-charred 
+                bone-in pork chops on the grill. The pork chops are prepared using the direct-grilling 
+                method and are smothered in a Dijon-style sauce that provides a welcomed tangy flavor.
+                Sliced apple combines with arugula, celery, radishes, and pecans for a crunchy salad 
+                topped with a cheesy vinaigrette dressing.</p>
+
+            <div class="action-buttons">
+                <button class="recipe-button" tabindex="0">
+                    <img src="assets/heart.png" alt="Save" style="width: 20px; height: 20px;"> Save
+                </button>
+                <div class="divider"></div>
+                <button class="recipe-button" tabindex="0">
+                    <img src="assets/star.png" alt="Rate"  style="width: 25px; height: 25px;"> Rate
+                </button>
+                <div class="divider"></div>
+                <button class="recipe-button" tabindex="0">
+                    <img src="assets/share.png" alt="Share"  style="width: 17px; height: 17px;"> Share
+                </button>
+            </div>
+
+            <img src="assets/dijon-main1.jpeg" alt="Dijon Pork Chops" class="recipe-image">
+
+            <h2 class="ingredients-title">Ingredients</h2>
+            <div class="ingredients-box">
+                <ul class="ingredients-column" tabindex="0">
+                    <li>3 cups baby arugula</li>
+                    <li>1 Fuji apple, sliced</li>
+                    <li>1 cup thinly sliced celery stalks</li>
+                    <li>1/2 cup thinly sliced radishes</li>
+                    <li>1/2 cup toasted pecan pieces</li>
+                    <li>3 tbsp cider vinegar</li>
+                    <li>3 tbsp olive oil</li>
+                    <li>1 tbsp honey</li>
+                    <li>Kosher salt</li>
+                    <li>Ground black pepper</li>
+                </ul>
+                <ul class="ingredients-column" tabindex="0">
+                    <li>1/4 cup crumbled blue cheese</li>
+                    <li>2 tbsp Dijon mustard</li>
+                    <li>1 tbsp whole grain mustard </li>
+                    <li>1 tbsp mayonnaise or salad dressing</li>
+                    <li>2 tsp packed brown sugar</li>
+                    <li>2 tsp snipped fresh thyme or 1/2 tsp dried crushed thyme</li>
+                    <li>1/4 tsp ground black pepper</li>
+                    <li>4 bone-in pork loin chops, 1-inch thick</li>
+                </ul>
+            </div>
+
+            <a href="#step1" class="view-recipe-button" tabindex="0">View Recipe</a>
+        </div>
+
+        <!-- Step Sections -->
+        <div id="step1" class="recipe-step" tabindex="0">
+            <h1>Step 1: Prepare the Salad</h1>
+            <p>For salad, in a large bowl toss together arugula, apple, celery,
+                radishes, and pecans; cover and chill.</p>
+            <img src="assets/dijon1.png" alt="Step 1 Image" class="recipe-image">
+            <div class="recipe-nav-buttons">
+                <a href="#step2" class="recipe-nav-button next-button" tabindex="0">Next</a>
+            </div>
+        </div>
+
+        <div id="step2" class="recipe-step" tabindex="0">
+            <h1>Step 2: Make the Dressing</h1>
+            <p>For dressing, in a small bowl whisk together vinegar, oil, honey,
+                 and blue cheese. Season with salt and pepper; cover and chill.</p>
+            <img src="assets/dijon2.png" alt="Step 2 Image" class="recipe-image">
+            <div class="recipe-nav-buttons">
+                <a href="#step1" class="recipe-nav-button back-button" tabindex="0">Back</a>
+                <a href="#step3" class="recipe-nav-button next-button" tabindex="0">Next</a>
+            </div>
+        </div>
+
+        <div id="step3" class="recipe-step" tabindex="0">
+            <h1>Step 3: Create the Dijon Mustard</h1>
+            <p>In a small bowl whisk together Dijon-style mustard, whole-grain mustard,
+                mayonnaise, brown sugar, thyme, and the 1/4 teaspoon pepper; set aside.</p>
+            <img src="assets/dijon3.png" alt="Step 3 Image" class="recipe-image">
+            <div class="recipe-nav-buttons">
+                <a href="#step2" class="recipe-nav-button back-button" tabindex="0">Back</a>
+                <a href="#step4" class="recipe-nav-button next-button" tabindex="0">Next</a>
+            </div>
+        </div>
+
+        <div id="step4" class="recipe-step" tabindex="0">
+            <h1>Step 4: Grill the Pork</h1>
+            <p>For a charcoal or gas grill, place chops on the rack of a covered grill directly
+                over medium heat. Grill for 10 to 12 minutes or until 145°F, turning once halfway through grilling.</p>
+            <img src="assets/dijon4.png" alt="Step 4 Image" class="recipe-image">
+            <div class="recipe-nav-buttons">
+                <a href="#step3" class="recipe-nav-button back-button" tabindex="0">Back</a>
+                <a href="#step5" class="recipe-nav-button next-button" tabindex="0">Next</a>
+            </div>
+        </div>
+
+        <div id="step5" class="recipe-step" tabindex="0">
+            <h1>Step 5: Plate the Cooked Pork</h1>
+            <p>Transfer chops to a plate and let stand for 5 minutes. Spoon mustard mixture over chops.</p>
+            <img src="assets/dijon5.png" alt="Step 5 Image" class="recipe-image">
+            <div class="recipe-nav-buttons">
+                <a href="#step4" class="recipe-nav-button back-button" tabindex="0">Back</a>
+                <a href="#step6" class="recipe-nav-button next-button" tabindex="0">Next</a>
+            </div>
+        </div>
+
+        <div id="step6" class="recipe-step" tabindex="0">
+            <h1>Step 6: Serve with Salad</h1>
+            <p>Toss salad with dressing; serve with chops.</p>
+            <img src="assets/dijon-main2.png" alt="Step 6 Image" class="recipe-image">
+            <div class="recipe-nav-buttons">
+                <a href="#step5" class="recipe-nav-button back-button" tabindex="0">Back</a>
+                <a href="#ingredients-view" class="recipe-nav-button next-button" tabindex="0">Back to Top</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
