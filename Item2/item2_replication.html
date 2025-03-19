@@ -7,46 +7,41 @@
     <link rel="stylesheet" href="item2_replication.css">
 </head>
 <body>
-
-    <header>
-        <!-- Title Bar -->
-        <div class="title-bar">
-            <img src="assets/snoolo.png" alt="Reddit Logo" class="title-icon">
-            <h1 class="title-text">Reddit</h1>
-            <img src="assets/snoogroup.png" alt="Reddit Logo" class="title-icon">
+    <header class="title-bar">
+        <img src="assets/snoolo.png" alt="Reddit Logo" class="title-icon">
+        <h1 class="title-text">Reddit</h1>
+        <img src="assets/snoogroup.png" alt="Reddit Logo" class="title-icon">
+    </header>
+    
+    <div class="toolbar-container">
+        <nav class="toolbar-tabs">
+            <input type="radio" id="tab-hot" name="tab" checked>
+            <label for="tab-hot">what's hot</label>
+    
+            <input type="radio" id="tab-new" name="tab">
+            <label for="tab-new">new</label>
+    
+            <input type="radio" id="tab-controversial" name="tab">
+            <label for="tab-controversial">controversial</label>
+    
+            <input type="radio" id="tab-top" name="tab">
+            <label for="tab-top">top</label>
+    
+            <input type="radio" id="tab-saved" name="tab">
+            <label for="tab-saved">saved</label>
+        </nav>
+    
+        <div class="toolbar-icons">
+            <span class="inbox">
+                <img src="assets/msg.png" alt="Inbox"> 1 New Msg
+            </span>
+            <span class="links">53,211 Link</span>
+            <span class="comments">4,887 Comment</span>
         </div>
-    
-        <!-- Toolbar -->
-        <div class="toolbar-container">
-            <nav class="toolbar-tabs">
-                <input type="radio" id="tab-hot" name="tab" checked>
-                <label for="tab-hot">what's hot</label>
-    
-                <input type="radio" id="tab-new" name="tab">
-                <label for="tab-new">new</label>
-    
-                <input type="radio" id="tab-controversial" name="tab">
-                <label for="tab-controversial">controversial</label>
-    
-                <input type="radio" id="tab-top" name="tab">
-                <label for="tab-top">top</label>
-    
-                <input type="radio" id="tab-saved" name="tab">
-                <label for="tab-saved">saved</label>
-            </nav>
-    
-            <div class="toolbar-icons">
-                <span class="inbox">
-                    <img src="assets/msg.png" alt="Inbox"> 1 New Msg
-                </span>
-                <span class="links">53,211 Link</span>
-                <span class="comments">4,887 Comment</span>
-            </div>
-        </div>
-    </header>    
+    </div>
+      
 
     <main class="container">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <ul class="sidebar-links">
                 <li>📝 FRONT PAGE</li>
@@ -79,14 +74,50 @@
             </div>
         </aside>
 
-        <!-- Main Feed -->
         <section class="feed">
-            <p>Main posts feed goes here...</p>
+            <div class="content-item">
+                <div class="rank">1</div>
+                <div class="votes">
+                    <button class="upvote">▲</button>
+                    <span class="vote-count">120</span>
+                    <button class="downvote">▼</button>
+                </div>
+                <img src="assets/ad.jpg" alt="Thumbnail" class="thumbnail">
+                <div class="content-details">
+                    <class="content-title">Sample Reddit Post Title</class>
+                    <p class="content-time">Submitted 2 hours ago</p>
+                    <div class="content-actions">
+                        <span class="clickable">n comments</span>
+                        <span class="clickable">share</span>
+                        <span class="clickable">save</span>
+                        <span class="clickable">hide</span>
+                        <span class="clickable">report</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-item">
+                <div class="rank">2</div>
+                <div class="votes">
+                    <button class="upvote">▲</button>
+                    <span class="vote-count">120</span>
+                    <button class="downvote">▼</button>
+                </div>
+                <img src="assets/ad.jpg" alt="Thumbnail" class="thumbnail">
+                <div class="content-details">
+                    <class="content-title">Sample Reddit Post Title</class>
+                    <p class="content-time">Submitted 2 hours ago</p>
+                    <div class="content-actions">
+                        <span class="clickable">n comments</span>
+                        <span class="clickable">share</span>
+                        <span class="clickable">save</span>
+                        <span class="clickable">hide</span>
+                        <span class="clickable">report</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Contents -->
         <aside class="contents">
-            <p>Post details/content goes here...</p>
         </aside>
     </main>
 
